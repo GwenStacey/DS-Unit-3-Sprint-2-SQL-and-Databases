@@ -15,5 +15,10 @@ CURS.execute("INSERT INTO demo VALUES('f', 8, 7);")
 CONN.commit()
 
 CURS.execute('SELECT COUNT(*) FROM demo;')
+print(CURS.fetchall())
+
 CURS.execute('SELECT COUNT(*) FROM demo WHERE x >= 5 AND y >= 5;')
+print(CURS.fetchall())
+
 CURS.execute('SELECT COUNT(DISTINCT(y)) FROM demo;')
+print(CURS.fetchall())

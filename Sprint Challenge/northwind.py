@@ -8,6 +8,7 @@ CURS.execute('SELECT * FROM product ORDER BY UnitPrice DESC LIMIT 10;')
 #Calculate average age at hire
 CURS.execute('SELECT AVG(strftime("%Y", Hiredate) - strftime("%Y", Birthdate)) FROM Employee;')
 avg_at_hire = CURS.fetchall()
+print(avg_at_hire)
 
 #Find 10 most expensive items, and their suppliers
 CURS.execute('''SELECT CompanyName, ProductName, UnitPrice FROM Product, Supplier
@@ -15,6 +16,7 @@ CURS.execute('''SELECT CompanyName, ProductName, UnitPrice FROM Product, Supplie
                 ORDER BY UnitPrice DESC
                 LIMIT 10;''')
 top_ten_supps = CURS.fetchall()
+print(top_ten_supps)
 
 #Find largest category
 CURS.execute('''SELECT CategoryId, COUNT(*) FROM Product
@@ -22,6 +24,7 @@ CURS.execute('''SELECT CategoryId, COUNT(*) FROM Product
              ORDER BY 2 DESC
              LIMIT 1;''')
 lrgst_cat = CURS.fetchall()
+print(lrgst_cat)
 
 #Print final results
 print(top_ten_supps, lrgst_cat)
